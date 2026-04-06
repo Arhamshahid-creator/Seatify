@@ -1,21 +1,19 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512">
-  <!-- Background -->
-  <rect width="512" height="512" rx="100" fill="#f5e6d3"/>
+  <!-- Minimalist Neat Background -->
+  <rect width="512" height="512" rx="128" fill="#ffffff"/>
   
   <!-- Chair Back -->
-  <path d="M180 120h152c15 0 25 10 25 25v80c0 15-10 25-25 25H180c-15 0-25-10-25-25v-80c0-15 10-25 25-25z" fill="#d9a066" stroke="#1e293b" stroke-width="12"/>
+  <rect x="180" y="120" width="152" height="120" rx="16" fill="#8b5e3c"/>
   
   <!-- Chair Seat -->
-  <path d="M140 250h232c10 0 20 10 20 20l-10 60c0 10-10 20-20 20H150c-10 0-20-10-20-20l-10-60c0-10 10-20 20-20z" fill="#d9a066" stroke="#1e293b" stroke-width="12"/>
+  <rect x="150" y="250" width="212" height="30" rx="8" fill="#a0522d"/>
   
   <!-- Chair Legs -->
-  <path d="M160 350l-15 80M352 350l15 80M180 350l5 30M327 350l-5 30" stroke="#1e293b" stroke-width="14" stroke-linecap="round"/>
-  <path d="M155 250v100M357 250v100" stroke="#1e293b" stroke-width="14" stroke-linecap="round"/>
+  <path d="M170 280l-10 120M342 280l10 120M190 280l5 40M317 280l-5 40" stroke="#5d4037" stroke-width="16" stroke-linecap="round"/>
   
-  <!-- Arrow -->
-  <path d="M420 280c0 20-10 40-30 50" fill="none" stroke="#d9a066" stroke-width="10" stroke-linecap="round"/>
-  <path d="M390 330l10-5-5 10z" fill="#d9a066" stroke="#d9a066" stroke-width="2"/>
-
-  <!-- Text -->
-  <text x="256" y="480" font-family="Arial, sans-serif" font-size="70" font-weight="900" fill="#1e3a8a" text-anchor="middle" letter-spacing="2">SEATIFY</text>
+  <!-- Connecting Bars -->
+  <path d="M165 360h182" stroke="#5d4037" stroke-width="8" stroke-linecap="round"/>
+  
+  <!-- Seat Support -->
+  <path d="M180 240v10M332 240v10" stroke="#5d4037" stroke-width="12" stroke-linecap="round"/>
 </svg>
