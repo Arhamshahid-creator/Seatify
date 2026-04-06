@@ -1,7 +1,21 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512">
+  <!-- Background -->
   <rect width="512" height="512" rx="100" fill="#f5e6d3"/>
-  <path d="M150 150h212v150h-212z" fill="#8b5e3c" stroke="#1e293b" stroke-width="12" rx="20"/>
-  <path d="M130 300h252v40H130z" fill="#8b5e3c" stroke="#1e293b" stroke-width="12" rx="10"/>
-  <path d="M160 340l-20 100M352 340l20 100M180 340l10 40M322 340l-10 40" stroke="#1e293b" stroke-width="12" stroke-linecap="round"/>
-  <text x="256" y="460" font-family="Arial, sans-serif" font-size="80" font-weight="bold" fill="#1e293b" text-anchor="middle">SEATIFY</text>
+  
+  <!-- Chair Back -->
+  <path d="M180 120h152c15 0 25 10 25 25v80c0 15-10 25-25 25H180c-15 0-25-10-25-25v-80c0-15 10-25 25-25z" fill="#d9a066" stroke="#1e293b" stroke-width="12"/>
+  
+  <!-- Chair Seat -->
+  <path d="M140 250h232c10 0 20 10 20 20l-10 60c0 10-10 20-20 20H150c-10 0-20-10-20-20l-10-60c0-10 10-20 20-20z" fill="#d9a066" stroke="#1e293b" stroke-width="12"/>
+  
+  <!-- Chair Legs -->
+  <path d="M160 350l-15 80M352 350l15 80M180 350l5 30M327 350l-5 30" stroke="#1e293b" stroke-width="14" stroke-linecap="round"/>
+  <path d="M155 250v100M357 250v100" stroke="#1e293b" stroke-width="14" stroke-linecap="round"/>
+  
+  <!-- Arrow -->
+  <path d="M420 280c0 20-10 40-30 50" fill="none" stroke="#d9a066" stroke-width="10" stroke-linecap="round"/>
+  <path d="M390 330l10-5-5 10z" fill="#d9a066" stroke="#d9a066" stroke-width="2"/>
+
+  <!-- Text -->
+  <text x="256" y="480" font-family="Arial, sans-serif" font-size="70" font-weight="900" fill="#1e3a8a" text-anchor="middle" letter-spacing="2">SEATIFY</text>
 </svg>
