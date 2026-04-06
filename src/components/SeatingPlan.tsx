@@ -8,8 +8,8 @@ import { jsPDF } from 'jspdf';
 interface SeatingPlanProps {}
 
 export default function SeatingPlan({}: SeatingPlanProps) {
-  const [className, setClassName] = useState('');
-  const [teacherName, setTeacherName] = useState('');
+  const [className, setClassName] = useState('8th');
+  const [teacherName, setTeacherName] = useState('Mr.Shahid');
   const [session, setSession] = useState('');
   const [startDate, setStartDate] = useState('');
   const [endDate, setEndDate] = useState('');
@@ -71,25 +71,45 @@ export default function SeatingPlan({}: SeatingPlanProps) {
     
     try {
       const canvas = await html2canvas(planRef.current, {
-        scale: 2, // Higher scale for better quality
+        scale: 2,
         useCORS: true,
         allowTaint: true,
         backgroundColor: '#ffffff',
         logging: false,
-        width: 1100, // Force a wider capture width to include C5
-        height: planRef.current.scrollHeight,
+        width: 1100,
+        // Use a slightly larger height to ensure nothing is cut off
+        height: planRef.current.offsetHeight + 100,
         scrollX: 0,
         scrollY: 0,
-        windowWidth: 1400, // Ensure the virtual window is wide enough
+        windowWidth: 1400,
         onclone: (clonedDoc) => {
           const el = clonedDoc.getElementById('export-container');
           if (el) {
             el.style.width = '1100px';
             el.style.height = 'auto';
             el.style.margin = '0';
-            el.style.padding = '20px';
+            el.style.padding = '40px';
             el.style.display = 'block';
+            el.style.visibility = 'visible';
             
+            // Adjust header for better alignment in capture
+            const header = el.querySelector('header');
+            if (header) {
+              header.style.padding = '40px';
+              header.style.display = 'flex';
+              header.style.flexDirection = 'column';
+              header.style.alignItems = 'center';
+              header.style.justifyContent = 'center';
+              
+              const metaContainer = header.querySelector('div');
+              if (metaContainer) {
+                metaContainer.style.display = 'flex';
+                metaContainer.style.flexWrap = 'wrap';
+                metaContainer.style.justifyContent = 'center';
+                metaContainer.style.gap = '20px';
+              }
+            }
+
             // Force all motion elements to be visible and static for capture
             const motionElements = el.querySelectorAll('.motion-item');
             motionElements.forEach((me: any) => {
@@ -97,6 +117,20 @@ export default function SeatingPlan({}: SeatingPlanProps) {
               me.style.transform = 'none';
               me.style.scale = '1';
               me.style.display = 'flex';
+              me.style.visibility = 'visible';
+              // Reduce size slightly as requested
+              me.style.minHeight = '60px';
+              me.style.height = '60px';
+              me.style.aspectRatio = 'auto';
+            });
+
+            // Fix icon displacement by ensuring they are properly aligned
+            const icons = el.querySelectorAll('svg');
+            icons.forEach((icon: any) => {
+              icon.style.display = 'inline-block';
+              icon.style.verticalAlign = 'middle';
+              icon.style.position = 'relative';
+              icon.style.top = '-1px';
             });
           }
         }
