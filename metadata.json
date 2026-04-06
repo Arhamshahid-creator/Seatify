@@ -1,0 +1,5 @@
+{
+  "name": "Seating Plan PWA",
+  "description": "A progressive web app for generating and editing school seating plans.",
+  "requestFramePermissions": []
+}

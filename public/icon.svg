@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512">
+  <rect width="512" height="512" rx="100" fill="#f5e6d3"/>
+  <path d="M150 150h212v150h-212z" fill="#8b5e3c" stroke="#1e293b" stroke-width="12" rx="20"/>
+  <path d="M130 300h252v40H130z" fill="#8b5e3c" stroke="#1e293b" stroke-width="12" rx="10"/>
+  <path d="M160 340l-20 100M352 340l20 100M180 340l10 40M322 340l-10 40" stroke="#1e293b" stroke-width="12" stroke-linecap="round"/>
+  <text x="256" y="460" font-family="Arial, sans-serif" font-size="80" font-weight="bold" fill="#1e293b" text-anchor="middle">SEATIFY</text>
+</svg>
