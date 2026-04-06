@@ -8,8 +8,8 @@ import { jsPDF } from 'jspdf';
 interface SeatingPlanProps {}
 
 export default function SeatingPlan({}: SeatingPlanProps) {
-  const [className, setClassName] = useState('8th');
-  const [teacherName, setTeacherName] = useState('Mr.Shahid');
+  const [className, setClassName] = useState('');
+  const [teacherName, setTeacherName] = useState('');
   const [session, setSession] = useState('');
   const [startDate, setStartDate] = useState('');
   const [endDate, setEndDate] = useState('');
@@ -130,7 +130,15 @@ export default function SeatingPlan({}: SeatingPlanProps) {
               icon.style.display = 'inline-block';
               icon.style.verticalAlign = 'middle';
               icon.style.position = 'relative';
-              icon.style.top = '-1px';
+              icon.style.top = '2px'; // Push down slightly to fix upward displacement
+            });
+
+            // Ensure header paragraphs are properly aligned
+            const headerParagraphs = el.querySelectorAll('header p');
+            headerParagraphs.forEach((p: any) => {
+              p.style.display = 'flex';
+              p.style.alignItems = 'center';
+              p.style.lineHeight = '1.5';
             });
           }
         }
@@ -336,20 +344,20 @@ export default function SeatingPlan({}: SeatingPlanProps) {
             <div className="flex flex-wrap justify-center gap-x-6 gap-y-2 text-slate-300 text-sm md:text-base">
               <p className="flex items-center gap-1.5">
                 <GraduationCap className="w-4 h-4" />
-                Class: <span className="text-white font-medium">{className || 'Not Provided'}</span>
+                Class: <span className="text-white font-medium">{className || '__________'}</span>
               </p>
               <p className="flex items-center gap-1.5">
                 <User className="w-4 h-4" />
-                Class Incharge: <span className="text-white font-medium">{teacherName || 'Not Provided'}</span>
+                Class Incharge: <span className="text-white font-medium">{teacherName || '__________'}</span>
               </p>
               <p className="flex items-center gap-1.5">
                 <Hash className="w-4 h-4" />
-                Session: <span className="text-white font-medium">{session || 'Not Provided'}</span>
+                Session: <span className="text-white font-medium">{session || '__________'}</span>
               </p>
               <p className="flex items-center gap-1.5">
                 <Calendar className="w-4 h-4" />
                 Date: <span className="text-white font-medium">
-                  {startDate && endDate ? `${startDate} to ${endDate}` : 'Not Provided'}
+                  {startDate && endDate ? `${startDate} to ${endDate}` : '__________'}
                 </span>
               </p>
             </div>
